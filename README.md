@@ -54,6 +54,35 @@ Now: select English text → copy → `Super+T` → Bangla popup, copied back.
 A second launch never opens a duplicate — it signals the running instance over a
 unix socket (`$XDG_RUNTIME_DIR/translate-tool.sock`).
 
+## Ubuntu / GNOME
+
+The same code runs on Ubuntu (GNOME) — only a couple of environment details differ.
+
+```bash
+git clone git@github.com:niadul-munna/translate-tool.git
+cd translate-tool
+./install.sh
+~/.local/bin/translate-tool &
+```
+
+The icon appears in the top-right tray.
+
+- **Tray icon:** Ubuntu's GNOME ships the AppIndicator extension, so the icon
+  shows out of the box. On a **vanilla** GNOME spin, enable it once:
+  ```bash
+  sudo apt install gnome-shell-extension-appindicator
+  ```
+  then turn it on in the Extensions app and log out/in.
+- **Clipboard:** on Wayland (Ubuntu 22.04+ default) install `wl-clipboard`:
+  ```bash
+  sudo apt install wl-clipboard
+  ```
+  On an X11 session it falls back to `xclip` automatically. Check your session
+  with `echo $XDG_SESSION_TYPE`.
+- **Global hotkey:** Settings → **Keyboard** → **View and Customize Shortcuts**
+  → **Custom Shortcuts** → **+**. Command:
+  `~/.local/bin/translate-tool --clipboard`, bind e.g. `Super+T`.
+
 ## Usage
 
 | Action | How |

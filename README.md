@@ -7,7 +7,7 @@
 ![GTK](https://img.shields.io/badge/GTK-3-4A86CF?logo=gnome&logoColor=white)
 ![Tray](https://img.shields.io/badge/tray-AppIndicator%20SNI-5e81ac)
 ![Engine](https://img.shields.io/badge/engine-MyMemory%20%2B%20Google-f6a800)
-![Tests](https://img.shields.io/badge/tests-16%20passing-3fb950)
+[![Tests](https://github.com/niadul-munna/onubad/actions/workflows/tests.yml/badge.svg)](https://github.com/niadul-munna/onubad/actions/workflows/tests.yml)
 ![pip deps](https://img.shields.io/badge/pip%20deps-none-2ea043)
 
 A lightweight English↔Bangla translator that lives in the Pop!_OS **COSMIC**

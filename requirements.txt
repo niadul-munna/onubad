@@ -1,0 +1,10 @@
+# All runtime deps come from system packages on Pop!_OS / Ubuntu — no pip needed.
+#
+# System (apt):
+#   gir1.2-ayatanaappindicator3-0.1   # tray icon (StatusNotifierItem) for COSMIC panel
+#   python3-gi                        # PyGObject / GTK3   (usually preinstalled)
+#   python3-requests                  # HTTP for translation API
+#   python3-pil                       # icon generation
+#   wl-clipboard                      # wl-copy / wl-paste (Wayland clipboard)
+#
+# install.sh installs the typelib and verifies the rest.

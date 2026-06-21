@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from translate_tool.history import History
+from onubad.history import History
 
 
 class HistoryTests(unittest.TestCase):

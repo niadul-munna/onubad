@@ -3,7 +3,7 @@ import threading
 import unittest
 from pathlib import Path
 
-from translate_tool import ipc
+from onubad import ipc
 
 
 class IpcTests(unittest.TestCase):

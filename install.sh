@@ -6,7 +6,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 BIN="$HOME/.local/bin"
 APPS="$HOME/.local/share/applications"
 AUTOSTART="$HOME/.config/autostart"
-WRAPPER="$BIN/translate-tool"
+WRAPPER="$BIN/onubad"
 
 echo "==> Checking AppIndicator typelib (needed for the COSMIC panel icon)…"
 if ! python3 -c 'import gi; gi.require_version("AyatanaAppIndicator3","0.1")' 2>/dev/null \
@@ -32,22 +32,22 @@ mkdir -p "$BIN" "$APPS" "$AUTOSTART"
 cat > "$WRAPPER" <<EOF
 #!/usr/bin/env bash
 export PYTHONPATH="$HERE\${PYTHONPATH:+:\$PYTHONPATH}"
-exec python3 -m translate_tool.main "\$@"
+exec python3 -m onubad.main "\$@"
 EOF
 chmod +x "$WRAPPER"
 
 echo "==> Installing app launcher + autostart entry"
-cat > "$APPS/translate-tool.desktop" <<EOF
+cat > "$APPS/onubad.desktop" <<EOF
 [Desktop Entry]
 Type=Application
-Name=Translate EN↔BN
+Name=Onubad — EN↔BN
 Comment=English↔Bangla translator (tray)
 Exec=$WRAPPER
 Icon=accessories-dictionary
 Terminal=false
 Categories=Utility;
 EOF
-cp "$APPS/translate-tool.desktop" "$AUTOSTART/translate-tool.desktop"
+cp "$APPS/onubad.desktop" "$AUTOSTART/onubad.desktop"
 
 cat <<EOF
 
@@ -62,5 +62,5 @@ Global hotkey (one-time):
     Command:  $WRAPPER --open           (just open the window)
   Bind e.g. Super+T. Then: select English text, copy, press the key.
 
-Tip: add ~/.local/bin to PATH to run 'translate-tool' from any terminal.
+Tip: add ~/.local/bin to PATH to run 'onubad' from any terminal.
 EOF

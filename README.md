@@ -1,4 +1,4 @@
-# Translate EN↔BN — COSMIC tray translator
+# Onubad — English↔Bangla translator for COSMIC
 
 A lightweight English↔Bangla translator that lives in the Pop!_OS **COSMIC**
 panel. Tray icon, popup window, global-hotkey clipboard translation, direction
@@ -30,13 +30,13 @@ No pip packages, no virtualenv.
 ./install.sh
 ```
 
-This installs the tray typelib (asks for sudo), a `~/.local/bin/translate-tool`
+This installs the tray typelib (asks for sudo), a `~/.local/bin/onubad`
 launcher, an app entry, and an autostart entry.
 
 Start immediately:
 
 ```bash
-~/.local/bin/translate-tool &
+~/.local/bin/onubad &
 ```
 
 The icon appears in the COSMIC panel. On next login it starts automatically.
@@ -46,23 +46,23 @@ The icon appears in the COSMIC panel. On next login it starts automatically.
 Wayland apps can't grab keys directly, so bind a COSMIC custom shortcut:
 
 1. **COSMIC Settings → Keyboard → Shortcuts → Custom → Add**
-2. Command: `~/.local/bin/translate-tool --clipboard`
+2. Command: `~/.local/bin/onubad --clipboard`
 3. Bind e.g. `Super+T`.
 
 Now: select English text → copy → `Super+T` → Bangla popup, copied back.
 
 A second launch never opens a duplicate — it signals the running instance over a
-unix socket (`$XDG_RUNTIME_DIR/translate-tool.sock`).
+unix socket (`$XDG_RUNTIME_DIR/onubad.sock`).
 
 ## Ubuntu / GNOME
 
 The same code runs on Ubuntu (GNOME) — only a couple of environment details differ.
 
 ```bash
-git clone git@github.com:niadul-munna/translate-tool.git
-cd translate-tool
+git clone git@github.com:niadul-munna/onubad.git
+cd onubad
 ./install.sh
-~/.local/bin/translate-tool &
+~/.local/bin/onubad &
 ```
 
 The icon appears in the top-right tray.
@@ -81,13 +81,13 @@ The icon appears in the top-right tray.
   with `echo $XDG_SESSION_TYPE`.
 - **Global hotkey:** Settings → **Keyboard** → **View and Customize Shortcuts**
   → **Custom Shortcuts** → **+**. Command:
-  `~/.local/bin/translate-tool --clipboard`, bind e.g. `Super+T`.
+  `~/.local/bin/onubad --clipboard`, bind e.g. `Super+T`.
 
 ## Usage
 
 | Action | How |
 |--------|-----|
-| Open popup | Click panel icon → **Open**, or `translate-tool --open` |
+| Open popup | Click panel icon → **Open**, or `onubad --open` |
 | Translate clipboard | Panel **Translate clipboard**, or hotkey |
 | Translate typed text | Type in input → **Translate** (or Ctrl+Enter) |
 | Swap direction | **⇄ Swap** button |
@@ -99,7 +99,7 @@ The icon appears in the top-right tray.
 - Text is sent to the online translation provider (MyMemory / Google) — required
   for an online engine.
 - History is stored **locally** in plaintext at
-  `~/.local/share/translate-tool/history.json`. Use **Clear history** to wipe it.
+  `~/.local/share/onubad/history.json`. Use **Clear history** to wipe it.
 
 ## Development
 

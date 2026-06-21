@@ -8,7 +8,7 @@ from pathlib import Path
 
 def default_path():
     base = os.environ.get("XDG_DATA_HOME") or os.path.expanduser("~/.local/share")
-    return Path(base) / "translate-tool" / "history.json"
+    return Path(base) / "onubad" / "history.json"
 
 
 class History:

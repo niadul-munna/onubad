@@ -21,7 +21,7 @@ class Popup:
 
     # ---- UI construction -------------------------------------------------
     def _build(self):
-        self.win = Gtk.Window(title="Translate EN↔BN")
+        self.win = Gtk.Window(title="Onubad")
         self.win.set_default_size(480, 460)
         self.win.set_keep_above(True)
         self.win.set_border_width(8)

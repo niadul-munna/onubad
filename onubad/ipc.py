@@ -11,7 +11,7 @@ import threading
 
 def socket_path():
     base = os.environ.get("XDG_RUNTIME_DIR") or "/tmp"
-    return os.path.join(base, "translate-tool.sock")
+    return os.path.join(base, "onubad.sock")
 
 
 def try_connect_and_send(action, path=None):

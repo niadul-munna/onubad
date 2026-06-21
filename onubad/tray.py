@@ -20,12 +20,12 @@ except (ValueError, ImportError):  # older distros
 from gi.repository import Gtk  # noqa: E402
 from PIL import Image, ImageDraw, ImageFont  # noqa: E402
 
-ICON_NAME = "translate-tool"
+ICON_NAME = "onubad"
 
 
 def _icon_dir():
     base = os.environ.get("XDG_DATA_HOME") or os.path.expanduser("~/.local/share")
-    d = Path(base) / "translate-tool" / "icons"
+    d = Path(base) / "onubad" / "icons"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
@@ -65,10 +65,10 @@ class Tray:
     def __init__(self, on_open, on_clipboard, on_quit):
         icon_dir = _ensure_icon()
         self.ind = AppIndicator.Indicator.new_with_path(
-            "translate-tool", ICON_NAME,
+            "onubad", ICON_NAME,
             AppIndicator.IndicatorCategory.APPLICATION_STATUS, icon_dir)
         self.ind.set_status(AppIndicator.IndicatorStatus.ACTIVE)
-        self.ind.set_title("Translate EN↔BN")
+        self.ind.set_title("Onubad")
 
         menu = Gtk.Menu()
         for label, cb in (("Open", on_open),

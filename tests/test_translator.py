@@ -1,8 +1,8 @@
 import unittest
 from unittest import mock
 
-from translate_tool import translator
-from translate_tool.translator import translate, detect_lang, TranslationError
+from onubad import translator
+from onubad.translator import translate, detect_lang, TranslationError
 
 
 def _resp(json_data, status_code=200):
